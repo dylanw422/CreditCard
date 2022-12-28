@@ -74,10 +74,11 @@ fname.addEventListener('input', () => {                      // NAME ON CARD
     if (fname.value.length >= 5) {
         validName = true;
         fname.style.border = '2px solid rgb(85, 211, 131)'
-        changeToGreen()
+        fname.style.animation = 'toGreen 1s'
     } else {
         validName = false;
         fname.style.border = '2px solid rgb(252, 21, 102)'
+        fname.style.animation = ''
     }
 })
 
@@ -101,30 +102,35 @@ fccn.addEventListener('input', () => {              //CREDIT CARD NUMBER
         logo.src = 'images/amex.png'
         fadeAnimation()
         fccn.style.border = '2px solid rgb(85, 211, 131)'
+        fccn.style.animation = 'toGreen 1s'
         console.log('AMEX')
         validCCN = true;
     } else if (fccn.value.match(/65[4-9][0-9]{13}|64[4-9][0-9]{13}|6011[0-9]{12}|(622(?:12[6-9]|1[3-9][0-9]|[2-8][0-9][0-9]|9[01][0-9]|92[0-5])[0-9]{10})/) && luhn_validate(fccn.value)) {
         logo.src = 'images/discover.png'
         fadeAnimation()
         fccn.style.border = '2px solid rgb(85, 211, 131)'
+        fccn.style.animation = 'toGreen 1s'
         console.log('Discover')
         validCCN = true;
     } else if (fccn.value.match(/(5[1-5][0-9]{14}|2(22[1-9][0-9]{12}|2[3-9][0-9]{13}|[3-6][0-9]{14}|7[0-1][0-9]{13}|720[0-9]{12}))/) && luhn_validate(fccn.value)) {
         logo.src = 'images/master.png'
         fadeAnimation()
         fccn.style.border = '2px solid rgb(85, 211, 131)'
+        fccn.style.animation = 'toGreen 1s'
         console.log('MasterCard')
         validCCN = true;
     } else if (fccn.value.match(/4[0-9]{15}?/) && luhn_validate(fccn.value)) {
         logo.src = 'images/visa.png'
         fadeAnimation()
         fccn.style.border = '2px solid rgb(85, 211, 131)'
+        fccn.style.animation = 'toGreen 1s'
         console.log('Visa')
         validCCN = true;
     } else {
         logo.src = ''
         fadeAnimation()
         fccn.style.border = '2px solid rgb(252, 21, 102)'
+        fccn.style.animation = ''
         validCCN = false;
     }
 })
@@ -142,7 +148,7 @@ fexp.addEventListener('input', () => {               //Expiration Date
     let currentMonth = date.getMonth() + 1
     let currentYear = date.getFullYear()
     
-    if (parseInt(fexp.value.slice(2,4)) === parseInt(currentYear.toString().slice(2,4)) && (parseInt(fexp.value.slice(0,2) > parseInt(currentYear.toString().slice(0,2))))) {
+    if (parseInt(fexp.value.slice(2,4)) === parseInt(currentYear.toString().slice(2,4)) && (parseInt(fexp.value.slice(0,2) > parseInt(currentMonth.toString().slice(0,2))))) {
         fexp.style.border = '2px solid rgb(85, 211, 131)'
         validDate = true
     } else if (parseInt(fexp.value.slice(2,4)) > parseInt(currentYear.toString().slice(2,4))) {

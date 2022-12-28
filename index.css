@@ -204,20 +204,16 @@ input::-webkit-inner-spin-button {
     }
 }
 
-@keyframes disappear {
-    25% {
-        opacity: 50;
+@keyframes toGreen {
+    0% {
+        border: 2px solid rgb(252, 21, 102)
     }
     50% {
-        opacity: 25;
-    }
-    75% {
-        opacity: 0;
+        border: 2px solid rgb(205, 211, 85)
     }
     100% {
-        opacity: 0;
+        border: 2px solid rgb(85, 211, 131)
     }
-
 }
 
 @media only screen 
