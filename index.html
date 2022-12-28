@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card Validator</title>
+    <link rel="stylesheet" href="./index.css">
+    <script src="index.js" defer></script>
+    <style> @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap'); </style>
+</head>
+<body>
+    <div class="card-container">
+        <div class="card">
+            <div class="type">
+                <img id="logo" src="">
+            </div>
+            <div class="number">
+                <h3 id="ccn">•••• •••• •••• ••••</h3>
+            </div>
+            <div class="namexp">
+                <h3 id="name">JOHN DOE</h3>
+                <h3 id="expdate">01 / 32</h3>
+            </div>
+        </div>
+        <div class="cardback">
+            <div class="strip"></div>
+            <div class="whitesquare">
+                <h3 id="cvvNumber"><em>123</em></h3>
+            </div>
+        </div>
+    </div>
+    <form class="form">
+        <input id="fname" name="name" maxlength="15" placeholder="Name On Card">
+        <input id="fccn" type="tel" maxlength="16" placeholder="Card Number">
+        <input id="fexp" maxlength="4" placeholder="Exp Date">
+        <input id="fccv" name="cvv" maxlength="4" placeholder="CVV">
+        <button type="submit">Submit</button>
+        <h5>Accepts American Express, Discover, Mastercard, and Visa <br> <h6>Hover over card to see back</h6>
+    </form>
+</body>
+</html>

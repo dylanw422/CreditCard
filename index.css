@@ -1,0 +1,218 @@
+* {
+    margin: 0px;
+}
+
+body {
+    width: 100;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to bottom right, rgb(64, 0, 255), rgb(181, 201, 255));
+    position: relative;
+}
+
+.card-container {
+    transition: transform 1.5s;
+    transform-style: preserve-3d;
+}
+
+.card-container:hover {
+    transform: rotateY(180deg);
+}
+
+.card, .cardback {
+    backface-visibility: hidden;
+}
+
+.card {
+    height: 300px;
+    width: calc(300px * 1.618);
+    background-image: url('./images/gradienta-ix_kUDzCczo-unsplash.jpg');
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 10px 60px rgb(29, 29, 29);
+    z-index: 1;
+}
+
+.type {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: end;
+}
+
+.type > img {
+    width: 80px;
+    object-fit: contain;
+    margin-right: 5%;
+    margin-top: 5%;
+    mix-blend-mode: color-dodge
+}
+
+.number {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    font-family: 'Quicksand', sans-serif;
+    letter-spacing: 0.3em;
+    color: white;
+}
+
+.namexp {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Quicksand', sans-serif;
+    letter-spacing: 0.15em;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+h3 {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.cardback {
+    height: 300px;
+    z-index: 1;
+    width: calc(300px * 1.618);
+    background-image: url('./images/gradienta-ix_kUDzCczo-unsplash.jpg');
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-shadow: 0px 10px 60px rgb(29, 29, 29);
+    position: absolute;
+    transform: translateY(-100%) rotateY(180deg);
+}
+
+.strip {
+    width: 100%;
+    height: 50px;
+    background-color: black;
+    transform: translateY(30%);
+}
+
+.whitesquare {
+    width: 60%;
+    height: 50px;
+    background-image: url('images/holo.jpg');
+    background-position-x: -150px;
+    transform: translateY(150%);
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-left: 25px;
+}
+
+#cvvNumber {
+    font-family: 'Quicksand', sans-serif;
+    letter-spacing: 0.1em;
+    margin: none;
+    transform: translateX(100%);
+}
+
+.form {
+    height: 350px;
+    width: 400px;
+    border: none;
+    background-color: azure;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 0px 0px 20px 20px;
+    position: relative;
+}
+
+@keyframes focus {
+    to {
+        font-size: 10px;
+        color:rgb(252, 21, 102);
+        background-color: white;
+        transition: translateY(-20%)
+    }
+}
+
+input {
+    width: 80%;
+    height: 40px;
+    background-color: transparent;
+    border: 1px solid gray;
+    padding-left: 10px;
+    border-radius: 8px;
+}
+
+input:focus {
+    outline: none
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.form > button {
+    width: 20%;
+    height: 10%;
+    background-color: gray;
+    border: none;
+    color: white;
+    border-radius: 5px;
+}
+
+.animated {
+    animation: fade 2s;
+}
+
+.form > h5, h6 {
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 0.2em;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transfrom: translateY(0px)
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 100;
+    }
+}
+
+@keyframes buttonColor {
+    to {
+        background-color: rgb(252, 21, 102);
+    }
+}
+
+@keyframes shake {
+    0% { transform: translateX(0) }
+    25% { transform: translateX(10px) }
+    50% { transform: translateX(-20px) }
+    75% { transform: translateX(10px) }
+    100% { transform: translateX(0) }
+
+}
